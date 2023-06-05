@@ -5,6 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    projectId: "mo4rcs"
+    projectId: "mo4rcs",
+    video: true
   },
 });

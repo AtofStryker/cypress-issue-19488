@@ -22,13 +22,7 @@ jobs:
         run: npm ci
       - name: Run cypress tests
         uses: cypress-io/github-action@v4
+      - uses: actions/upload-artifact@v3
         with:
-          # Unfortunately, videos do not work on the default GitHub actions runner. See:
-          # https://github.com/cypress-io/cypress/issues/19488
-          #
-          # We still want to record the tests to Cypress dashboard as it allows for easier
-          # debugging of test output and offers additional features for free.
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: cypress-videos
+          path: cypress/videos
